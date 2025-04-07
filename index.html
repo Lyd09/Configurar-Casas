@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrição de Casa</title>
+    <script src="./config.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="card-title mb-0">Gerar Descrição do Imóvel</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="codinput" class="form-label">Código da Casa</label>
+                                <input type="number" class="form-control" id="codinput" aria-describedby="codhelp">
+                                <div id="codhelp" class="form-text">Insira o código da casa</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="locinput" class="form-label">Localização</label>
+                                <input type="text" class="form-control" id="locinput" aria-describedby="lochelp">
+                                <div id="lochelp" class="form-text">Insira a localização da casa</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descinput" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="descinput" aria-describedby="deschelp">
+                                <div id="deschelp" class="form-text">Insira a descrição da casa (opcional)</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="caracinput">Características Principais</label>
+                                <textarea class="form-control" id="caracinput" rows="4"
+                                    aria-describedby="carachelp"></textarea>
+                                <div id="carachelp" class="form-text">Insira as principais características</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="areatotalinput">Área Total</label>
+                                <input type="number" class="form-control" id="areatotalinput"
+                                    aria-describedby="areatotalhelp">
+                                <div id="areatotalhelp" class="form-text">Insira a área total em m²</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="areaprivadainput">Área Privada</label>
+                                <input type="number" class="form-control" id="areaprivadainput"
+                                    aria-describedby="areaprivadahelp">
+                                <div id="areaprivadahelp" class="form-text">Insira a área privada em m²</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="valorinput">Valor</label>
+                                <input type="text" class="form-control" id="valorinput" aria-describedby="valorhelp">
+                                <div id="valorhelp" class="form-text">Insira o valor do imóvel</div>
+                            </div>
+                        </form>
+                        <button class="btn btn-primary w-100" id="generate" onclick="generateValue()">Gerar
+                            Descrição</button>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h2 class="card-title mb-0">Descrição Gerada</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="conteudo" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="conteudo" name="conteudo" rows="8"
+                                    aria-describedby="copiarhelp"></textarea>
+                                <div id="copiarhelp" class="form-text">Copie a descrição gerada abaixo</div>
+                            </div>
+                        </form>
+                        <button class="btn btn-secondary w-100" id="copy" onclick="copiarTexto()">Copiar
+                            Descrição</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
